@@ -1,19 +1,23 @@
+/* Variable para acceder las secciones con la clase "hidden" */
+
+const seccionesOcultas = document.querySelectorAll('.hidden');
 
 
 /* El Observer*/
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('mostrar');
-        } else {
-            entry.target.classList.remove('mostrar');
-        }
-        
+
+        entry.target.classList.toggle('mostrar', entry.isIntersecting);
+        // if(entry.isIntersecting) observer.unobserve(entry.target);        
     });
-});
-/* Variable para acceder las secciones con la clase "hidden" */
+},
 
-const seccionesOcultas = document.querySelectorAll('.hidden');
+{threshold: 0.8}
 
-seccionesOcultas.forEach((elemento)=>observer.observe(elemento));
+
+);
+
+
+
+seccionesOcultas.forEach((seccion)=>observer.observe(seccion));
