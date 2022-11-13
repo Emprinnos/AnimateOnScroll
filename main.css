@@ -1,0 +1,26 @@
+
+body {
+    padding:0;
+    margin:0;
+    background-color: #3f3f3f;
+    color: #f3f3f3;
+}
+
+h1{
+    font-weight: normal;
+}
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+}
+
+.container-img {
+    text-align: center;
+}
+
+.container-img img {
+    max-width: 70%;
+    height:auto;
+    border-radius: 5px;
+}
